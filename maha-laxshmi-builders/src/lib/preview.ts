@@ -7,7 +7,7 @@ const base = {
   price: null,
   price_unit: 'per_sq_ft',
   cover_image: null,
-  gallery_images: [],
+gallery_images: [] as string[],
   status: 'available',
   featured: true,
   published: false,
