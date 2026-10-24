@@ -1,0 +1,8 @@
+import {Link} from 'react-router-dom';
+import {ArrowUpRight,MapPin,Scaling} from 'lucide-react';
+import type {Property} from '../lib/types';
+import {formatPrice} from '../lib/types';
+import {imageUrl} from '../lib/supabase';
+import {waLink} from '../lib/config';
+const images:Record<string,string>={'sunshine-colony':'/images/road-plot-4k.webp','hirli-area-plot':'/images/location-land-4k.webp','sri-ram-nagar':'/images/featured-land-4k.webp','mbg-nagar':'/images/about-land-4k.webp','mahalaxshmi-greens-colony':'/images/masterplan-4k.webp'};
+export function PropertyCard({property:p}:{property:Property;preview?:boolean}){return <article className="new-property-card"><Link className="new-property-photo" to={`/properties/${p.slug}`}><img src={p.cover_image?imageUrl(p.cover_image):images[p.slug]||'/images/featured-land-4k.webp'} alt={`${p.title} plotted land illustration, not actual site photograph`} loading="lazy"/><span className="card-badge">{p.category}</span></Link><div className="new-property-body"><div className="new-property-location"><MapPin size={15}/>{p.location}</div><Link to={`/properties/${p.slug}`}><h3>{p.title}</h3></Link><div className="new-property-facts"><span><Scaling size={16}/>{p.area?`${p.area.toLocaleString('en-IN')} ${p.area_unit}`:'Area on request'}</span><span>{formatPrice(p)}</span></div><div className="new-property-actions"><Link to={`/properties/${p.slug}`} className="property-detail-link">View details <ArrowUpRight size={16}/></Link><a href={waLink(`Hello, I am interested in ${p.title}. Please share the current details.`)} target="_blank" rel="noopener noreferrer" className="property-enquiry-link">Enquire now <ArrowUpRight size={16}/></a></div></div></article>}

@@ -1,0 +1,70 @@
+import type { Property } from './types';
+// Unpublished design preview only. SOURCE: supplied Hindi/Odia draft ad copy.
+// Conflicting name/prices/approvals are intentionally flagged or omitted until verified.
+const base = {
+  category: 'Residential Plot',
+  area_unit: 'sq.ft.',
+  price: null,
+  price_unit: 'per_sq_ft',
+  cover_image: null,
+  gallery_images: [],
+  status: 'available',
+  featured: true,
+  published: false,
+  created_at: '2026-10-24T00:00:00Z',
+  updated_at: '2026-10-24T00:00:00Z',
+} as const;
+
+export const previewProperties: Property[] = [
+  {
+    ...base,
+    id: 'preview-sunshine',
+    title: 'Sunshine Colony',
+    slug: 'sunshine-colony',
+    description: 'Plot opportunity near NH26 and Borigumma. Contact the team for current availability, exact price, and on-ground visit coordination.',
+    location: 'Near NH26, Borigumma',
+    area: 1800,
+    price: null,
+    features: ['Near NH26', 'Approx. 100 meters from NH26', '20 ft road', 'Road access details available on enquiry'],
+  },
+  {
+    ...base,
+    id: 'preview-hirli',
+    title: 'Hirli Area Plot',
+    slug: 'hirli-area-plot',
+    description: 'Explore a plot opportunity in the Hirli area of Nabarangpur. Contact us for current project details, pricing and site visit information.',
+    location: 'Near Hirli Dongri, Nabarangpur',
+    area: 1740,
+    features: ['Near main town', 'Near Hirli Dongri', 'Near NH26 bypass', 'Schools, colleges and market references mentioned in supplied drafts'],
+  },
+  {
+    ...base,
+    id: 'preview-sri-ram',
+    title: 'Sri Ram Nagar',
+    slug: 'sri-ram-nagar',
+    description: 'Located on the Nabarangpur–Tentulikhunti Road according to supplied ad materials. Use the contact options for current details and site-visit coordination.',
+    location: 'Nabarangpur–Tentulikhunti Road',
+    area: 1800,
+    features: ['20 ft road', 'Near city-side facilities as per draft documents', 'Contact for current documentation details'],
+  },
+  {
+    ...base,
+    id: 'preview-mbg',
+    title: 'M.B.G Nagar',
+    slug: 'mbg-nagar',
+    description: 'Positioned near Mondei Field in the supplied materials. Contact our team for the latest information about this plot location and current availability.',
+    location: 'Near Mondei Field, Nabarangpur',
+    area: 1742,
+    features: ['Near bypass', 'Near Hirli Dongri Top', 'Road access available', 'Contact for current documentation details'],
+  },
+  {
+    ...base,
+    id: 'preview-greens',
+    title: 'Mahalaxshmi Greens Colony',
+    slug: 'mahalaxshmi-greens-colony',
+    description: 'Plot listing near NH26 and RO Road as described in the supplied materials. Contact our team for updated price, availability and details of this project.',
+    location: 'RO Road, near NH26',
+    area: 1750,
+    features: ['Near NH26', 'RO Road positioning', '20 ft road', 'Contact for current registration details'],
+  },
+];
